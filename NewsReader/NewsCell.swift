@@ -23,4 +23,6 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var likesIcon: UIImageView!
     
     @IBOutlet weak var commentsLabel: UILabel!
+    
+   
 }

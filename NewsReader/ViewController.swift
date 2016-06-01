@@ -10,36 +10,48 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let tableViewImageDimension: CGFloat = 85
+    
     @IBOutlet weak var newsTable: UITableView!
-
     var articles = [Article]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let a = Article()
-        a.title = "This is author A"
-        
-        let b = Article()
-        b.title = "This is author title B"
-        articles.append(a)
-        articles.append(b)
-        
-        newsTable.separatorInset = UIEdgeInsets(top: 0, left: 84, bottom: 0, right: 0)
-        newsTable.tableFooterView = UIView(frame: CGRectZero)
+        styleTableView()
+//        
+//        APIManager.searchArticles("Bieber", completion: {
+//            articles in
+//            self.articles = articles
+//            self.newsTable.reloadData()
+//        })
+        APIManager.getTopStories(completion: {
+            articles in
+            self.articles = articles
+            self.newsTable.reloadData()
+        })
     }
 
+    private func styleTableView() {
+        newsTable.separatorInset = UIEdgeInsets(top: 0, left: tableViewImageDimension-1, bottom: 0, right: 0)
+        newsTable.tableFooterView = UIView(frame: CGRectZero)//no separator for empty cells
+    }
        
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.articles.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NewsCell", forIndexPath: indexPath) as! NewsCell
         
-    
-        cell.titleLabel.text = articles[indexPath.row].title
-        cell.likesLabel.text = String(arc4random_uniform(50))
-        cell.commentsLabel.text = String(arc4random_uniform(20))
+        let article = articles[indexPath.row]
+        
+        cell.titleLabel.text = article.title
+        cell.dateTimeLabel.text = article.publicationDate
+        cell.likesLabel.text = String(article.numberOfLikes)
+        cell.commentsLabel.text = String(article.numberOfComments)
+        
+        cell.likesIcon.image = article.liked ? UIImage(named: "ic_like_full_small") : UIImage(named: "ic_like_small")
+        cell.categoryIcon.image = article.getCategoryImage()
         return cell
      }
 
@@ -50,7 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 85
+        return tableViewImageDimension
     }
 }
 
