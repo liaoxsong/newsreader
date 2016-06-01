@@ -164,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="671" y="321"/>
         </scene>
-        <!--View Controller-->
+        <!--Article View Controller-->
         <scene sceneID="t3T-Tp-4Mp">
             <objects>
-                <viewController id="nes-5j-tW8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" id="nes-5j-tW8" customClass="ArticleViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vL9-re-8MF"/>
                         <viewControllerLayoutGuide type="bottom" id="Zil-eq-EwJ"/>
@@ -175,8 +175,23 @@
                     <view key="view" contentMode="scaleToFill" id="GQl-94-5Kw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-cz-T41">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.58823529411764708" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Z53-0x-Auh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lzE-cz-T41" firstAttribute="top" secondItem="GQl-94-5Kw" secondAttribute="top" id="je9-vO-PN4"/>
+                            <constraint firstAttribute="trailing" secondItem="lzE-cz-T41" secondAttribute="trailing" id="lIF-8T-mAk"/>
+                            <constraint firstItem="lzE-cz-T41" firstAttribute="leading" secondItem="GQl-94-5Kw" secondAttribute="leading" id="nO3-zt-oKy"/>
+                        </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAm-80-znn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

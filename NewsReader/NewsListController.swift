@@ -17,8 +17,10 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.view.backgroundColor = UIColor.navigationGreyColor()//remove view controller transition shadow
+        
+        styleTableView()
         setUpSearchBar()
-        styleSearchBar()
         
         APIManager.getTopStories(completion: {
             articles in
@@ -27,13 +29,19 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
             self.newsTable.reloadData()
         })
     }
+    
+    //change back title when transition from article to list
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = "Today's Headlines"
+    }
 
-    private func setUpSearchBar() {
+    private func styleTableView() {
         newsTable.separatorInset = UIEdgeInsets(top: 0, left: tableViewImageDimension-1, bottom: 0, right: 0)
         newsTable.tableFooterView = UIView(frame: CGRectZero)//no separator for empty cells
     }
     
-    private func styleSearchBar() {
+    private func setUpSearchBar() {
         searchBar.searchTextField.borderStyle = .RoundedRect
         searchBar.searchTextField.addTarget(self, action: #selector(NewsListController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
         searchBar.clearSearchButton.addTarget(self, action: #selector(NewsListController.clearSearch), forControlEvents: .TouchUpInside)
@@ -63,6 +71,12 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        let articleVC =   self.storyboard?.instantiateViewControllerWithIdentifier("ArticleViewController") as! ArticleViewController
+        
+        articleVC.article = articles[indexPath.row]
+        self.showViewController(articleVC, sender: nil)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
