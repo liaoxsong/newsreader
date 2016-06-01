@@ -83,7 +83,6 @@ class APIManager {
                       
                         if let headline = result["headline"]["main"].string {
                             article.title = headline
-                              print(article.title)
                         }
                         
                         if let date = result["pub_date"].string {

@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class NewsListController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var searchButton: UIBarButtonItem!
     
@@ -35,8 +35,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private func styleSearchBar() {
         searchBar.searchTextField.borderStyle = .RoundedRect
-        searchBar.searchTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
-        searchBar.clearSearchButton.addTarget(self, action: #selector(ViewController.clearSearch), forControlEvents: .TouchUpInside)
+        searchBar.searchTextField.addTarget(self, action: #selector(NewsListController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
+        searchBar.clearSearchButton.addTarget(self, action: #selector(NewsListController.clearSearch), forControlEvents: .TouchUpInside)
        
     }
        
