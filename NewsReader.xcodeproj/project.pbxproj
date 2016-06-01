@@ -20,6 +20,7 @@
 		E4BD743D1CFF719D00B27A5A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD743C1CFF719D00B27A5A /* SearchBar.swift */; };
 		E4BD743F1CFF7CC400B27A5A /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD743E1CFF7CC400B27A5A /* ArticleViewController.swift */; };
 		E4BD74411CFF7F5B00B27A5A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD74401CFF7F5B00B27A5A /* Colors.swift */; };
+		E4BD74441CFF9FD500B27A5A /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD74431CFF9FD500B27A5A /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E4BD743C1CFF719D00B27A5A /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E4BD743E1CFF7CC400B27A5A /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		E4BD74401CFF7F5B00B27A5A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E4BD74431CFF9FD500B27A5A /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		E4BD740E1CFF2F1600B27A5A /* NewsReader */ = {
 			isa = PBXGroup;
 			children = (
+				E4BD74421CFF9FBE00B27A5A /* Views */,
 				E4BD742E1CFF52BB00B27A5A /* Cells */,
 				E4BD742D1CFF52B200B27A5A /* Networking */,
 				E4BD742B1CFF529D00B27A5A /* Models */,
@@ -101,9 +104,6 @@
 				E4BD74161CFF2F1600B27A5A /* Assets.xcassets */,
 				E4BD74181CFF2F1600B27A5A /* LaunchScreen.storyboard */,
 				E4BD741B1CFF2F1600B27A5A /* Info.plist */,
-				E4BD743A1CFF718500B27A5A /* SearchBar.xib */,
-				E4BD743C1CFF719D00B27A5A /* SearchBar.swift */,
-				E4BD74401CFF7F5B00B27A5A /* Colors.swift */,
 			);
 			path = NewsReader;
 			sourceTree = "<group>";
@@ -139,6 +139,17 @@
 				E4BD74231CFF3C5400B27A5A /* NewsCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		E4BD74421CFF9FBE00B27A5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4BD743A1CFF718500B27A5A /* SearchBar.xib */,
+				E4BD743C1CFF719D00B27A5A /* SearchBar.swift */,
+				E4BD74401CFF7F5B00B27A5A /* Colors.swift */,
+				E4BD74431CFF9FD500B27A5A /* UIImage+.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 				E4BD74101CFF2F1600B27A5A /* AppDelegate.swift in Sources */,
 				E4BD74241CFF3C5400B27A5A /* NewsCell.swift in Sources */,
 				E4BD74221CFF3B6600B27A5A /* Article.swift in Sources */,
+				E4BD74441CFF9FD500B27A5A /* UIImage+.swift in Sources */,
 				E4BD743D1CFF719D00B27A5A /* SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
