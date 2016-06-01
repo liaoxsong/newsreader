@@ -34,6 +34,8 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.title = "Today's Headlines"
+        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.navigationGreyColor()
     }
 
     private func styleTableView() {
@@ -70,6 +72,7 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        view.endEditing(true)//hide keyboard
         
         let articleVC =   self.storyboard?.instantiateViewControllerWithIdentifier("ArticleViewController") as! ArticleViewController
         
