@@ -47,7 +47,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arts" translatesAutoresizingMaskIntoConstraints="NO" id="5wf-oh-UzN">
-                                                    <rect key="frame" x="0.0" y="1" width="84" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="84" id="RIt-OS-jqz"/>
                                                         <constraint firstAttribute="width" constant="84" id="VWs-F8-4kO"/>
@@ -102,7 +102,7 @@
                                                 <constraint firstItem="eNL-HA-jRa" firstAttribute="top" secondItem="pEH-Nj-4EA" secondAttribute="top" constant="5" id="63R-0S-byD"/>
                                                 <constraint firstAttribute="bottom" secondItem="AYE-Bi-BLA" secondAttribute="bottom" constant="1.5" id="B3p-Q5-MNp"/>
                                                 <constraint firstItem="eJD-58-53d" firstAttribute="leading" secondItem="AYE-Bi-BLA" secondAttribute="trailing" constant="3" id="BwE-Pq-ue0"/>
-                                                <constraint firstItem="5wf-oh-UzN" firstAttribute="top" secondItem="pEH-Nj-4EA" secondAttribute="top" constant="1" id="SP6-mp-mcN"/>
+                                                <constraint firstItem="5wf-oh-UzN" firstAttribute="top" secondItem="pEH-Nj-4EA" secondAttribute="top" id="SP6-mp-mcN"/>
                                                 <constraint firstAttribute="bottom" secondItem="eJD-58-53d" secondAttribute="bottom" constant="5" id="Weh-NO-TQe"/>
                                                 <constraint firstItem="eNL-HA-jRa" firstAttribute="leading" secondItem="5wf-oh-UzN" secondAttribute="trailing" constant="8" id="ZcA-Bi-6hj"/>
                                                 <constraint firstItem="5wf-oh-UzN" firstAttribute="leading" secondItem="pEH-Nj-4EA" secondAttribute="leading" id="cJG-45-wuN"/>

@@ -1,10 +1,4 @@
-//
-//  APIManager.swift
-//  NewsReader
-//
-//  Created by Song Liao on 6/1/16.
-//  Copyright © 2016 Song. All rights reserved.
-//
+
 
 import Foundation
 import Alamofire
@@ -69,7 +63,7 @@ class APIManager {
     
     class func searchArticles(searchTerm: String, completion: ((articles: [Article]) -> Void)) {
         
-        let parameters = ["api-key": API_KEY_ARTICLE_SEARCH]
+        let parameters = ["api-key": API_KEY_ARTICLE_SEARCH, "q": searchTerm]
         
         Alamofire.request(.GET, BASE_URL + "search/v2/articlesearch.json", parameters: parameters).responseJSON { response in
             switch response.result {
@@ -78,7 +72,6 @@ class APIManager {
                     let json = JSON(data)
                     var articles = [Article]()
                     
-                    print(json)
                     
                     guard let results = json["response"]["docs"].array else {
                         print("no search results stories")
@@ -90,6 +83,7 @@ class APIManager {
                       
                         if let headline = result["headline"]["main"].string {
                             article.title = headline
+                              print(article.title)
                         }
                         
                         if let date = result["pub_date"].string {
@@ -106,6 +100,7 @@ class APIManager {
                         }
                         article.generateDemoData()
                         
+                      
                         articles.append(article)
                     }
                     completion(articles: articles)

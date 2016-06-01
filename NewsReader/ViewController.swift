@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  NewsReader
-//
-//  Created by Song Liao on 6/1/16.
-//  Copyright © 2016 Song. All rights reserved.
-//
 
 import UIKit
 
@@ -20,20 +13,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var newsTable: UITableView!
     var articles = [Article]()
+    var cachedStories = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSearchBar()
         styleSearchBar()
         
-        //
-//        APIManager.searchArticles("Bieber", completion: {
-//            articles in
-//            self.articles = articles
-//            self.newsTable.reloadData()
-//        })
         APIManager.getTopStories(completion: {
             articles in
+            self.cachedStories = articles
             self.articles = articles
             self.newsTable.reloadData()
         })
@@ -91,11 +80,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             searchBar.hidden = true
              searchButton.image = UIImage(named : "ic_search")
             newsTableTopSpacing.constant = 0
+            
+            articles = cachedStories
+            newsTable.reloadData()
         }
     }
     
     func textFieldDidChange(textField: UITextField) {
-        print(textField.text)
+        print(textField.text?.characters.count)
+        if textField.text?.characters.count > 0 {
+            APIManager.searchArticles(textField.text!, completion: {
+                articles in
+                self.articles = articles
+                self.newsTable.reloadData()
+            })
+        }
     }
     
     func clearSearch() {
