@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Today's Headline-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zV-v8-X3C" customClass="SearchBar" customModule="NewsReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="320" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Ki0-mn-ssQ"/>
+                                </constraints>
+                            </view>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMj-RD-Kxr">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -47,7 +54,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/23/2015 10:02 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slS-pd-IOo">
-                                                    <rect key="frame" x="92" y="63.5" width="129" height="16"/>
+                                                    <rect key="frame" x="92" y="63" width="129" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -127,8 +134,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4zV-v8-X3C" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2K1-XD-BFo"/>
                             <constraint firstItem="OSL-ME-sUp" firstAttribute="leading" secondItem="mMj-RD-Kxr" secondAttribute="leading" id="4Vq-me-Aub"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mMj-RD-Kxr" secondAttribute="bottom" id="JXE-dP-sBc"/>
+                            <constraint firstItem="4zV-v8-X3C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jy9-CN-eFd"/>
+                            <constraint firstAttribute="trailing" secondItem="4zV-v8-X3C" secondAttribute="trailing" id="MtM-8H-dCe"/>
                             <constraint firstItem="mMj-RD-Kxr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dFZ-Nk-Y5V"/>
                             <constraint firstAttribute="trailing" secondItem="mMj-RD-Kxr" secondAttribute="trailing" id="n3w-YR-BjS"/>
                             <constraint firstItem="OSL-ME-sUp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nIM-Xd-Qxj"/>
@@ -136,11 +146,18 @@
                             <constraint firstItem="OSL-ME-sUp" firstAttribute="bottom" secondItem="mMj-RD-Kxr" secondAttribute="top" id="sof-Sh-Lug"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qxv-HU-FcI">
-                        <barButtonItem key="rightBarButtonItem" image="ic_search" id="x62-Q0-73f"/>
+                    <navigationItem key="navigationItem" title="Today's Headline" id="qxv-HU-FcI">
+                        <barButtonItem key="rightBarButtonItem" image="ic_search" id="x62-Q0-73f">
+                            <connections>
+                                <action selector="searchButtonClicked:" destination="BYZ-38-t0r" id="QTQ-wz-MBx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="newsTable" destination="OSL-ME-sUp" id="3PP-HO-aIG"/>
+                        <outlet property="newsTableTopSpacing" destination="nIM-Xd-Qxj" id="cJn-du-HIQ"/>
+                        <outlet property="searchBar" destination="4zV-v8-X3C" id="LTf-qb-kFO"/>
+                        <outlet property="searchButton" destination="x62-Q0-73f" id="Zth-pi-thS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

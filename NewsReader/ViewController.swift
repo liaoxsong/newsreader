@@ -8,7 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+    
+    @IBOutlet weak var searchButton: UIBarButtonItem!
+    
+    @IBOutlet weak var newsTableTopSpacing: NSLayoutConstraint!
+    
+    @IBOutlet weak var searchBar: SearchBar!
     
     let tableViewImageDimension: CGFloat = 85
     
@@ -17,8 +23,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        styleTableView()
-//        
+        setUpSearchBar()
+        styleSearchBar()
+        
+        //
 //        APIManager.searchArticles("Bieber", completion: {
 //            articles in
 //            self.articles = articles
@@ -31,9 +39,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
 
-    private func styleTableView() {
+    private func setUpSearchBar() {
         newsTable.separatorInset = UIEdgeInsets(top: 0, left: tableViewImageDimension-1, bottom: 0, right: 0)
         newsTable.tableFooterView = UIView(frame: CGRectZero)//no separator for empty cells
+    }
+    
+    private func styleSearchBar() {
+        searchBar.searchTextField.borderStyle = .RoundedRect
+        searchBar.searchTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
+        searchBar.clearSearchButton.addTarget(self, action: #selector(ViewController.clearSearch), forControlEvents: .TouchUpInside)
+       
     }
        
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,6 +78,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return tableViewImageDimension
+    }
+    
+    //search bar related
+    @IBAction func searchButtonClicked(sender: UIBarButtonItem) {
+      
+        if searchBar.hidden { //if hidden show search bar
+            searchBar.hidden = false
+            searchButton.image = UIImage(named : "ic_close")
+            newsTableTopSpacing.constant = 56
+        } else { //hide search bar
+            searchBar.hidden = true
+             searchButton.image = UIImage(named : "ic_search")
+            newsTableTopSpacing.constant = 0
+        }
+    }
+    
+    func textFieldDidChange(textField: UITextField) {
+        print(textField.text)
+    }
+    
+    func clearSearch() {
+        searchBar.searchTextField.text = ""
     }
 }
 
