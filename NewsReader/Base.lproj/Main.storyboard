@@ -34,6 +34,9 @@
                                     <tabBarItem title="Categories" image="ic_categories" id="npo-un-K4b"/>
                                     <tabBarItem title="Settings" image="ic_settings" id="WzN-Hx-z2O"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xST-Gw-e7u"/>
+                                </connections>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OSL-ME-sUp">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>

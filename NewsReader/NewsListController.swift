@@ -1,7 +1,7 @@
 
 import UIKit
 
-class NewsListController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class NewsListController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITabBarDelegate {
     
     @IBOutlet weak var searchButton: UIBarButtonItem!
     
@@ -17,8 +17,6 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.view.backgroundColor = UIColor.navigationGreyColor()//remove view controller transition shadow
-        
         styleTableView()
         setUpSearchBar()
         
@@ -49,7 +47,8 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
         searchBar.clearSearchButton.addTarget(self, action: #selector(NewsListController.clearSearch), forControlEvents: .TouchUpInside)
        
     }
-       
+    
+    //MARK: tableview delegates
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.articles.count
     }
@@ -68,7 +67,6 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
         cell.categoryIcon.image = article.getCategoryImage()
         return cell
      }
-
 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -117,5 +115,12 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
     func clearSearch() {
         searchBar.searchTextField.text = ""
     }
+    
+    //MARK: tabBar delegate
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+       //TODO: go to controller..
+    }
+
+    
 }
 
