@@ -21,6 +21,9 @@
 		E4BD743F1CFF7CC400B27A5A /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD743E1CFF7CC400B27A5A /* ArticleViewController.swift */; };
 		E4BD74411CFF7F5B00B27A5A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD74401CFF7F5B00B27A5A /* Colors.swift */; };
 		E4BD74441CFF9FD500B27A5A /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD74431CFF9FD500B27A5A /* UIImage+.swift */; };
+		E4C6F5071CFFAD7200CB5AC9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F5061CFFAD7200CB5AC9 /* Constants.swift */; };
+		E4C6F5091CFFB12F00CB5AC9 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */; };
+		E4C6F50B1CFFB2DA00CB5AC9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F50A1CFFB2DA00CB5AC9 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		E4BD743E1CFF7CC400B27A5A /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		E4BD74401CFF7F5B00B27A5A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E4BD74431CFF9FD500B27A5A /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		E4C6F5061CFFAD7200CB5AC9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
+		E4C6F50A1CFFB2DA00CB5AC9 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		E4BD740E1CFF2F1600B27A5A /* NewsReader */ = {
 			isa = PBXGroup;
 			children = (
+				E4C6F5051CFFAD6200CB5AC9 /* Tools */,
 				E4BD74421CFF9FBE00B27A5A /* Views */,
 				E4BD742E1CFF52BB00B27A5A /* Cells */,
 				E4BD742D1CFF52B200B27A5A /* Networking */,
@@ -148,8 +155,18 @@
 				E4BD743C1CFF719D00B27A5A /* SearchBar.swift */,
 				E4BD74401CFF7F5B00B27A5A /* Colors.swift */,
 				E4BD74431CFF9FD500B27A5A /* UIImage+.swift */,
+				E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */,
+				E4C6F50A1CFFB2DA00CB5AC9 /* TestView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E4C6F5051CFFAD6200CB5AC9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6F5061CFFAD7200CB5AC9 /* Constants.swift */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,14 +292,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C6F50B1CFFB2DA00CB5AC9 /* TestView.swift in Sources */,
 				E4BD743F1CFF7CC400B27A5A /* ArticleViewController.swift in Sources */,
 				E4BD74411CFF7F5B00B27A5A /* Colors.swift in Sources */,
 				E4BD74281CFF4D6300B27A5A /* APIManager.swift in Sources */,
 				E4BD74121CFF2F1600B27A5A /* NewsListController.swift in Sources */,
 				E4BD74101CFF2F1600B27A5A /* AppDelegate.swift in Sources */,
+				E4C6F5071CFFAD7200CB5AC9 /* Constants.swift in Sources */,
 				E4BD74241CFF3C5400B27A5A /* NewsCell.swift in Sources */,
 				E4BD74221CFF3B6600B27A5A /* Article.swift in Sources */,
 				E4BD74441CFF9FD500B27A5A /* UIImage+.swift in Sources */,
+				E4C6F5091CFFB12F00CB5AC9 /* UITextView+.swift in Sources */,
 				E4BD743D1CFF719D00B27A5A /* SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
