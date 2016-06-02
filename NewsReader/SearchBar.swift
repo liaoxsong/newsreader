@@ -42,5 +42,5 @@ class SearchBar: UIView {
         
         return view
     }
-
+    
 }

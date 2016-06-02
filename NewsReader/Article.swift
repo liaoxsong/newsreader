@@ -13,7 +13,7 @@ enum Category : String {
 }
 
 class Article: NSObject {
-
+    
     var title = ""
     var publicationDate = ""
     var category = ""
@@ -32,11 +32,11 @@ class Article: NSObject {
         if category == Category.Arts.rawValue {
             return UIImage(named: "ic_arts")
         } else if category == Category.Business.rawValue {
-             return UIImage(named: "ic_business")
+            return UIImage(named: "ic_business")
         } else if category == Category.Sports.rawValue {
             return UIImage(named: "ic_sports")
         } else if category == Category.Science.rawValue {
-          return UIImage(named: "ic_science")
+            return UIImage(named: "ic_science")
         }
         return UIImage(named: "ic_politics")
     }

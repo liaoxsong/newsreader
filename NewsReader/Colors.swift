@@ -4,9 +4,9 @@ import Foundation
 import UIKit
 
 extension UIColor {
-
+    
     class func navigationGreyColor() -> UIColor {
-       return UIColor(red: 232/255, green: 238/255, blue: 243/255, alpha: 1)
+        return UIColor(red: 232/255, green: 238/255, blue: 243/255, alpha: 1)
     }
     
     class func appBlueColor() -> UIColor {

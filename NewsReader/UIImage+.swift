@@ -4,7 +4,7 @@
 import UIKit
 
 extension UIImage {
-
+    
     //used in ArticlesViewController
     func fitImageToWidth(newSize: CGSize) -> UIImage {
         UIGraphicsBeginImageContext(newSize)

@@ -9,7 +9,7 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var searchBar: SearchBar!
     
-    let tableViewImageDimension: CGFloat = 85
+    let tableViewCellHeight: CGFloat = 85
     
     @IBOutlet weak var newsTable: UITableView!
     var articles = [Article]()
@@ -35,9 +35,9 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor.navigationGreyColor()
     }
-
+    
     private func styleTableView() {
-        newsTable.separatorInset = UIEdgeInsets(top: 0, left: tableViewImageDimension-1, bottom: 0, right: 0)
+        newsTable.separatorInset = UIEdgeInsets(top: 0, left: tableViewCellHeight-1, bottom: 0, right: 0)
         newsTable.tableFooterView = UIView(frame: CGRectZero)//no separator for empty cells
     }
     
@@ -45,7 +45,7 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
         searchBar.searchTextField.borderStyle = .RoundedRect
         searchBar.searchTextField.addTarget(self, action: #selector(NewsListController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
         searchBar.clearSearchButton.addTarget(self, action: #selector(NewsListController.clearSearch), forControlEvents: .TouchUpInside)
-       
+        
     }
     
     //MARK: tableview delegates
@@ -66,8 +66,9 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
         cell.likesIcon.image = article.liked ? UIImage(named: "ic_like_full_small") : UIImage(named: "ic_like_small")
         cell.categoryIcon.image = article.getCategoryImage()
         return cell
-     }
-
+    }
+    
+    @IBOutlet weak var categoryIconDimension: NSLayoutConstraint!
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         view.endEditing(true)//hide keyboard
@@ -81,23 +82,24 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return tableViewImageDimension
+        return tableViewCellHeight
     }
     
     //search bar related
     @IBAction func searchButtonClicked(sender: UIBarButtonItem) {
-      
+        
         if searchBar.hidden { //if hidden show search bar
             searchBar.hidden = false
             searchButton.image = UIImage(named : "ic_close")
-            newsTableTopSpacing.constant = 56
+            newsTableTopSpacing.constant = searchBar.frame.height
         } else { //hide search bar
             searchBar.hidden = true
-             searchButton.image = UIImage(named : "ic_search")
+            searchButton.image = UIImage(named : "ic_search")
             newsTableTopSpacing.constant = 0
             
             articles = cachedStories
             newsTable.reloadData()
+            view.endEditing(true)//hide keyboard
         }
     }
     
@@ -118,9 +120,9 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
     
     //MARK: tabBar delegate
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-       //TODO: go to controller..
+        //TODO: go to controller..
     }
-
+    
     
 }
 

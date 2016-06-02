@@ -1,7 +1,7 @@
 import UIKit
 
 class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var article: Article!
     @IBOutlet weak var articleTable: UITableView!
     
@@ -34,7 +34,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         //make navigation bar's border transparent
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-      
+        
         //add category icon in top-left area of navigation bar, scale the image, and only show the height covered by the navigation bar
         let icon = UIImageView(frame: CGRect(x: categoryIconXOffset, y: -20/*status bar height*/, width: getCategoryIconDimension(), height: navigationAndStatusBarHeight))
         icon.tag = removeableTag
@@ -78,7 +78,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         return article.comments.count
     }
     
-   
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("CommentCell", forIndexPath: indexPath) as! CommentCell
@@ -94,7 +94,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
 extension ArticleViewController {
     //MARK: create article
     private func createHeader() -> UIView {
-
+        
         let header = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 500))
         header.backgroundColor = UIColor.whiteColor()
         
@@ -131,7 +131,7 @@ extension ArticleViewController {
         numberofFavoritesLabel.textAlignment = .Center
         numberofFavoritesLabel.center = favoriteIcon.center
         header.addSubview(numberofFavoritesLabel)
-      
+        
         
         //add first paragraph
         let paragraphA = UITextView(frame: CGRect(x: sideMargin, y: CGRectGetMaxY(bylineText.frame) + verticalMargin, width: self.view.frame.width - 2 * sideMargin, height: 100))
@@ -203,7 +203,7 @@ extension ArticleViewController {
         
         //set the header max height to max Y of last subview added
         header.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGRectGetMaxY(commentsLabel.frame))
-    
+        
         return header
     }
     

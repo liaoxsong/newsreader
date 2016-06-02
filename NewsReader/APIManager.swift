@@ -5,14 +5,14 @@ import Alamofire
 import SwiftyJSON
 
 class APIManager {
-
+    
     static let BASE_URL = "https://api.nytimes.com/svc/"
     static let API_KEY_TOP_STORIES = "340fe1949bbc2b893c4a336bb072412a:18:74255139"
     static let API_KEY_ARTICLE_SEARCH = "a8457610b68381085a3fff38d6a36337:6:74255139"
     
     
     class func getTopStories(completion completion: ((articles: [Article]) -> Void)) {
-     
+        
         let parameters = ["api-key": API_KEY_TOP_STORIES]
         
         Alamofire.request(.GET, BASE_URL + "topstories/v2/home.json", parameters: parameters).responseJSON { response in
@@ -80,7 +80,7 @@ class APIManager {
                     }
                     for result in results {
                         let article = Article()
-                      
+                        
                         if let headline = result["headline"]["main"].string {
                             article.title = headline
                         }
@@ -100,7 +100,7 @@ class APIManager {
                         article.generateDemoData()
                         article.comments = article.getDummyComments()
                         
-                      
+                        
                         articles.append(article)
                     }
                     completion(articles: articles)
