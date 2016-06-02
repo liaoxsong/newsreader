@@ -226,11 +226,11 @@
                                             <outlet property="userAvatarImage" destination="vly-t1-teB" id="Tbx-BV-3QN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeaderCell" rowHeight="68" id="JXK-Be-sTv" customClass="HeaderCell" customModule="NewsReader" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="117.5" width="320" height="68"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeaderCell" rowHeight="69" id="JXK-Be-sTv" customClass="HeaderCell" customModule="NewsReader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="117.5" width="320" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JXK-Be-sTv" id="THa-JT-kjF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
