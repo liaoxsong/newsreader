@@ -16,7 +16,7 @@ extension UITextView {
         self.textColor = UIColor.darkGrayColor()
         self.editable = false
         self.scrollEnabled = false
-        self.font = UIFont.systemFontOfSize(Constants.paragraphTextViewFontSize)
+        self.font = UIFont.systemFontOfSize(15)
         self.text = text
         self.fitToHeight()
 

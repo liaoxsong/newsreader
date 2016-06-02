@@ -23,7 +23,6 @@
 		E4BD74441CFF9FD500B27A5A /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD74431CFF9FD500B27A5A /* UIImage+.swift */; };
 		E4C6F5071CFFAD7200CB5AC9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F5061CFFAD7200CB5AC9 /* Constants.swift */; };
 		E4C6F5091CFFB12F00CB5AC9 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */; };
-		E4C6F50B1CFFB2DA00CB5AC9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F50A1CFFB2DA00CB5AC9 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +46,6 @@
 		E4BD74431CFF9FD500B27A5A /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		E4C6F5061CFFAD7200CB5AC9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
-		E4C6F50A1CFFB2DA00CB5AC9 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,10 +151,6 @@
 			children = (
 				E4BD743A1CFF718500B27A5A /* SearchBar.xib */,
 				E4BD743C1CFF719D00B27A5A /* SearchBar.swift */,
-				E4BD74401CFF7F5B00B27A5A /* Colors.swift */,
-				E4BD74431CFF9FD500B27A5A /* UIImage+.swift */,
-				E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */,
-				E4C6F50A1CFFB2DA00CB5AC9 /* TestView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -165,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				E4C6F5061CFFAD7200CB5AC9 /* Constants.swift */,
+				E4BD74401CFF7F5B00B27A5A /* Colors.swift */,
+				E4BD74431CFF9FD500B27A5A /* UIImage+.swift */,
+				E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -292,7 +289,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C6F50B1CFFB2DA00CB5AC9 /* TestView.swift in Sources */,
 				E4BD743F1CFF7CC400B27A5A /* ArticleViewController.swift in Sources */,
 				E4BD74411CFF7F5B00B27A5A /* Colors.swift in Sources */,
 				E4BD74281CFF4D6300B27A5A /* APIManager.swift in Sources */,

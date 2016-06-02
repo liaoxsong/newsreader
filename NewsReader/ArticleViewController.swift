@@ -4,10 +4,13 @@ class ArticleViewController: UIViewController {
 
     var article: Article!
     
-    //constants
+    //view constants
     let removeableTag = 122
     let categoryIconXOffset: CGFloat = -40
     let navigationAndStatusBarHeight: CGFloat = 64
+    let sideMargin: CGFloat = 15
+    let verticalMargin: CGFloat = 15
+    let sectionLabelFontSize: CGFloat = 18
     
     var scrollview: UIScrollView!
     
@@ -30,8 +33,9 @@ class ArticleViewController: UIViewController {
         lowerCategoryIcon.image = article.getCategoryImage()
         scrollview.addSubview(lowerCategoryIcon)
         
+        
         //add label for datetime and byline
-        let sideMargin: CGFloat = 15, verticalMargin: CGFloat = 15, favoriateIconDimension: CGFloat = 45, paragraphTextViewFontSize: CGFloat = 15, smallTextFontSize: CGFloat = 13
+        let favoriateIconDimension: CGFloat = 45, smallTextFontSize: CGFloat = 13
         let bylineText = UITextView(frame: CGRect(x: sideMargin, y: CGRectGetMaxY(blueOverlay.frame) + verticalMargin, width: self.view.frame.width - 3 * sideMargin - favoriateIconDimension, height: 30))
         bylineText.font = UIFont.systemFontOfSize(smallTextFontSize)
         bylineText.textColor = UIColor.lightGrayColor()
@@ -81,10 +85,53 @@ class ArticleViewController: UIViewController {
         paragraphB.styleParagraphWithText(Constants.DUMMYTEXT)
         scrollview.addSubview(paragraphB)
         
-     
+        //====Section: similar articles
+        let similarArticlesLabel = UILabel(frame: CGRect(x: sideMargin, y: CGRectGetMaxY(paragraphB.frame), width: self.view.frame.width - 2 * sideMargin, height: 30))
+        similarArticlesLabel.textColor = UIColor.appBlueColor()
+        similarArticlesLabel.font = UIFont.systemFontOfSize(sectionLabelFontSize)
+        similarArticlesLabel.text = "Similar Articles"
+        scrollview.addSubview(similarArticlesLabel)
+        
+        //create four image sections
+        let gapBetweenArticles: CGFloat = sideMargin
+        let imageDimension: CGFloat = (self.view.frame.width - 2 * sideMargin - gapBetweenArticles)/2
+        
+        //top left article
+        let articleTopLeft = UIImageView(frame: CGRect(x: sideMargin, y: CGRectGetMaxY(similarArticlesLabel.frame) + verticalMargin/2, width: imageDimension, height: imageDimension))
+        articleTopLeft.image = UIImage(named: "ic_arts")
+        scrollview.addSubview(articleTopLeft)
+        appendTextViewToArticle(imageFrame: articleTopLeft.frame, text: "More arts!")
+        
+        //top right article
+        let articleTopRight = UIImageView(frame: CGRect(x: CGRectGetMaxX(articleTopLeft.frame) + gapBetweenArticles, y: articleTopLeft.frame.origin.y, width: imageDimension, height: imageDimension))
+        articleTopRight.image = UIImage(named: "ic_business")
+        scrollview.addSubview(articleTopRight)
+        appendTextViewToArticle(imageFrame: articleTopRight.frame, text: "A nice business trip")
+        
+        //bottom left
+        let articleBottomLeft = UIImageView(frame: CGRect(x: sideMargin, y: CGRectGetMaxY(articleTopLeft.frame) + verticalMargin * 3, width: imageDimension, height: imageDimension))
+        articleBottomLeft.image = UIImage(named: "ic_science")
+        scrollview.addSubview(articleBottomLeft)
+        appendTextViewToArticle(imageFrame: articleBottomLeft.frame, text: "Science with a long name")
+
+        //bottom right
+        let articleBottomRight = UIImageView(frame: CGRect(x: articleTopRight.frame.origin.x, y: CGRectGetMaxY(articleTopLeft.frame) + verticalMargin * 3, width: imageDimension, height: imageDimension))
+        articleBottomRight.image = UIImage(named: "ic_science")
+        scrollview.addSubview(articleBottomRight)
+        appendTextViewToArticle(imageFrame: articleBottomRight.frame, text: "Nope it wasn't alien")
+        
         
     }
     
+    private func appendTextViewToArticle(imageFrame imageFrame: CGRect, text: String) {
+        let textVerticalMargin: CGFloat = 5, fontSize: CGFloat = 20
+        let textUnderArticle = UILabel(frame: CGRect(x: imageFrame.origin.x, y: CGRectGetMaxY(imageFrame) + textVerticalMargin, width: imageFrame.size.width, height: 20))
+        textUnderArticle.text = text
+        textUnderArticle.textColor = UIColor.darkGrayColor()
+        textUnderArticle.font = UIFont.systemFontOfSize(fontSize)
+        scrollview.addSubview(textUnderArticle)
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillDisappear(animated)
         
