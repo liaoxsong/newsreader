@@ -59,7 +59,7 @@ class NewsListController: UIViewController, UITableViewDelegate, UITableViewData
         let article = articles[indexPath.row]
         
         cell.titleLabel.text = article.title
-        cell.dateTimeLabel.text = article.publicationDate
+        cell.dateTimeLabel.text = article.getDate()
         cell.likesLabel.text = String(article.numberOfLikes)
         cell.commentsLabel.text = String(article.numberOfComments)
         

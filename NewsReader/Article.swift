@@ -41,6 +41,25 @@ class Article: NSObject {
         return UIImage(named: "ic_politics")
     }
     
+    func getDate() -> String{
+        if publicationDate.isEmpty {
+            return ""
+        }
+            
+        let inputFormatter = NSDateFormatter()
+        inputFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+        let date = inputFormatter.dateFromString(publicationDate)
+        
+        let outputFormatter = NSDateFormatter()
+        outputFormatter.dateFormat = "MM/dd/yyyy hh:mm aa"
+        
+        if let d = date {
+            return outputFormatter.stringFromDate(d)
+        }
+        return ""
+    }
+    
     //for demo purpose
     func generateDemoData () {
         numberOfComments = Int(arc4random_uniform(20))

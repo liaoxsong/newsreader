@@ -112,7 +112,7 @@ extension ArticleViewController {
         let bylineText = UITextView(frame: CGRect(x: sideMargin, y: CGRectGetMaxY(blueOverlay.frame) + verticalMargin, width: self.view.frame.width - 3 * sideMargin - favoriateIconDimension, height: 30))
         bylineText.font = UIFont.systemFontOfSize(smallTextFontSize)
         bylineText.textColor = UIColor.lightGrayColor()
-        bylineText.text = "\(article.publicationDate)\n\(article.author)"
+        bylineText.text = "\(article.getDate())\n\(article.author)"
         bylineText.sizeToFit()
         bylineText.editable = false
         header.addSubview(bylineText)
