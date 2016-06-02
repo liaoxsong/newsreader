@@ -49,7 +49,7 @@ class APIManager {
                         
                         //arbitrary
                         article.generateDemoData()
-                    
+                        article.comments = article.getDummyComments()
                         articles.append(article)
                     }
                     completion(articles: articles)
@@ -98,6 +98,7 @@ class APIManager {
                             article.paragraph = paragraph
                         }
                         article.generateDemoData()
+                        article.comments = article.getDummyComments()
                         
                       
                         articles.append(article)
