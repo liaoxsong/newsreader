@@ -3,7 +3,6 @@ import UIKit
 class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var article: Article!
-    
     @IBOutlet weak var articleTable: UITableView!
     
     //view constants
@@ -24,10 +23,11 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         articleTable.rowHeight = UITableViewAutomaticDimension
         articleTable.estimatedRowHeight = 44.0
         
-        //everything besides the comments list is created here
+        //add everything besides the comments list
         articleTable.tableHeaderView = createHeader()
     }
     
+    //MARK: add image, title and background color to navigation bar
     override func viewWillAppear(animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -54,7 +54,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationController?.navigationBar.topItem?.title = "" //hide back button text
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor() //change back button color
     }
-
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.barTintColor = UIColor.navigationGreyColor()
@@ -65,12 +65,6 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-    
-    //MARK: table view header, use the header to create everything except the view
-    func getCategoryIconDimension() -> CGFloat {
-        return self.view.frame.width/2
-    }
-    
     
     //hide the footer
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -94,14 +88,11 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.commentLabel.text = comment.text
         return cell
     }
-
-   
-    
 }
 
 
 extension ArticleViewController {
-    
+    //MARK: create article
     private func createHeader() -> UIView {
 
         let header = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 500))
@@ -227,4 +218,7 @@ extension ArticleViewController {
         return textUnderArticle.frame
     }
     
+    private func getCategoryIconDimension() -> CGFloat {
+        return self.view.frame.width/2
+    }
 }

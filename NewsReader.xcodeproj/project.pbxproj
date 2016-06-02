@@ -25,7 +25,6 @@
 		E4C6F5091CFFB12F00CB5AC9 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */; };
 		E4C6F5111CFFC9A300CB5AC9 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F5101CFFC9A300CB5AC9 /* CommentCell.swift */; };
 		E4C6F5131CFFCD7A00CB5AC9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F5121CFFCD7A00CB5AC9 /* Comment.swift */; };
-		E4C6F5151CFFD64A00CB5AC9 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6F5141CFFD64A00CB5AC9 /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 		E4C6F5081CFFB12F00CB5AC9 /* UITextView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		E4C6F5101CFFC9A300CB5AC9 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		E4C6F5121CFFCD7A00CB5AC9 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		E4C6F5141CFFD64A00CB5AC9 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +148,6 @@
 			children = (
 				E4BD74231CFF3C5400B27A5A /* NewsCell.swift */,
 				E4C6F5101CFFC9A300CB5AC9 /* CommentCell.swift */,
-				E4C6F5141CFFD64A00CB5AC9 /* HeaderCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 				E4BD74121CFF2F1600B27A5A /* NewsListController.swift in Sources */,
 				E4BD74101CFF2F1600B27A5A /* AppDelegate.swift in Sources */,
 				E4C6F5071CFFAD7200CB5AC9 /* Constants.swift in Sources */,
-				E4C6F5151CFFD64A00CB5AC9 /* HeaderCell.swift in Sources */,
 				E4BD74241CFF3C5400B27A5A /* NewsCell.swift in Sources */,
 				E4BD74221CFF3B6600B27A5A /* Article.swift in Sources */,
 				E4C6F5131CFFCD7A00CB5AC9 /* Comment.swift in Sources */,

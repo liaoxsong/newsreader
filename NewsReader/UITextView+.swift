@@ -4,7 +4,6 @@ import UIKit
 
 extension UITextView {
     
-    
     func fitToHeight() {
         self.sizeToFit()
         self.layoutIfNeeded()
